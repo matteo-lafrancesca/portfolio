@@ -10,10 +10,5 @@
 @source "../**/*.vue";
 
 @plugin "daisyui" {
-    themes: fantasy;
-    root: ":root";
-    include: ;
-    exclude: ;
-    prefix: ;
-    logs: true;
+    themes: fantasy --default;
   }

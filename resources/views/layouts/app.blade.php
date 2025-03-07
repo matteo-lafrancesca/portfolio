@@ -6,7 +6,7 @@
     <title>Mon Portfolio</title>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-base-200 text-base-content min-h-screen grid grid-rows-[auto_1fr_auto]">
+<body class="bg-base-100 text-base-content min-h-screen grid grid-rows-[auto_1fr_auto]">
 
     @include('layouts.header')
 
