@@ -10,7 +10,7 @@
 
     @include('layouts.header')
 
-    <main class="max-w-6xl mx-auto px-4 py-8 w-full">
+    <main class="max-w-7xl mx-auto px-4 md:px-8 py-8 w-full">
         @yield('content')
     </main>
 

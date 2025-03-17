@@ -24,3 +24,5 @@ Route::get('/cv', function () {
 // Routes du formulaire de contact
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+
+Route::get('/projets/onswim', function () {return view('projets.natation');})->name('projets.onswim');

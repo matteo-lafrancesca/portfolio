@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="max-w-2xl mx-auto p-6 bg-base-200 text-base-content rounded-lg shadow-lg">
-        <h2 class="text-3xl font-bold text-center text-primary">Contact</h2>
-        <p class="text-center mt-2">Vous pouvez me contacter via ce formulaire.</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-center text-primary">Contact</h2>
+        <p class="text-lg text-neutral mt-4 leading-relaxed text-center">Vous pouvez me contacter via ce formulaire.</p>
 
         @if(session('success'))
             <div class="alert alert-success mt-4">

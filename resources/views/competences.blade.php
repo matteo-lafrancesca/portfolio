@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center py-12">
-        <h2 class="text-3xl font-bold text-primary">Mes Compétences</h2>
-        <p class="text-base-content mt-2">Découvrez mes compétences techniques et professionnelles.</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-primary">Mes Compétences</h2>
+        <p class="text-lg text-neutral mt-4 leading-relaxed">Découvrez mes compétences techniques et professionnelles.</p>
     </div>
 @endsection
