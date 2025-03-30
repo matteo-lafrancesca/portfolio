@@ -1,5 +1,10 @@
 import React from "react";
 import Layout from "../layouts/Layout";
+import news_1 from "../assets/images/news_1.jpg";
+import news_2 from "../assets/images/news_2.jpg";
+import news_3 from "../assets/images/news_3.jpg";
+import news_4 from "../assets/images/news_4.jpg";
+import news_5 from "../assets/images/news_5.jpg";
 
 const newsArticles = [
   {
@@ -7,35 +12,35 @@ const newsArticles = [
     summary: "Cet article détaille la croissance d'EVA, une start-up française spécialisée dans les jeux de tir en VR, qui a su s'imposer sur le marché du divertissement immersif.",
     source: "Presse Citron",
     link: "https://www.presse-citron.net/cette-start-up-mele-realite-virtuelle-e-sport-et-sport-pour-offrir-une-experience-unique/",
-    image: "/src/assets/images/news_1.jpg"
+    image: news_1
   },
   {
     title: "Metaverse : cinq questions sur le nouveau monde virtuel de Facebook",
     summary: "Cet article analyse les initiatives de Meta dans le domaine de la VR et de l'AR, et souligne le virage stratégique de la multinationale vers le métavers.",
     source: "Les Echos",
     link: "https://www.lesechos.fr/tech-medias/hightech/metaverse-cinq-questions-sur-le-nouveau-monde-virtuel-de-facebook-1359667",
-    image: "/src/assets/images/news_2.jpg"
+    image: news_2
   },
   {
     title: "La réalité augmentée comme on l’aime",
     summary: "Le Consumer Electronics Show 2024 a mis en avant les nouvelles technologies de réalité augmentée. Mise en lumière des innovations et des impacts potentiels.",
     source: "La Presse",
     link: "https://www.lapresse.ca/affaires/techno/2025-01-10/la-presse-a-las-vegas/la-realite-augmentee-comme-on-l-aime.php",
-    image: "/src/assets/images/news_3.jpg"
+    image: news_3
   },
   {
     title: "Réalité virtuelle : l’Apple Vision Pro ouvre les portes d’un autre monde",
     summary: "Apple a lancé le Vision Pro, un casque de réalité mixte révolutionnaire aux États-Unis en février 2024, marquant un tournant dans le domaine des technologies immersives.",
     source: "Ouest France",
     link: "https://www.ouest-france.fr/high-tech/apple/realite-virtuelle-lapple-vision-pro-ouvre-les-portes-dun-autre-monde-nous-lavons-teste-25d4aa38-3d13-11ef-8b5d-fae23e5223f7",
-    image: "/src/assets/images/news_4.jpg"
+    image: news_4
   },
   {
     title: "La réalité virtuelle immersive permet de réduire la douleur chez les patients atteints d’un cancer",
     summary: "Une étude montre que des séances de réalité virtuelle immersive de 10 minutes peuvent réduire efficacement la douleur chez les patients atteints de cancer.",
     source: "Science et Vie",
     link: "https://www.science-et-vie.com/corps-et-sante/la-realite-virtuelle-immersive-permet-de-reduire-la-douleur-chez-les-patients-atteints-dun-cancer-132073.html",
-    image: "/src/assets/images/news_5.jpg"
+    image: news_5
   }
 ];
 
