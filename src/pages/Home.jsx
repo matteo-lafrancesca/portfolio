@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../layouts/Layout";
 import { Link } from "react-router-dom";
+import illustration from '/images/illustration.jpg';
 
 const Home = () => {
   return (
@@ -27,7 +28,7 @@ const Home = () => {
 
           {/* Image */}
           <div className="flex justify-center">
-            <img src={"/images/illustration.jpg"} alt="Illustration" className="rounded-lg" />
+            <img src={illustration} alt="Illustration" className="rounded-lg" />
           </div>
         </div>
       </div>
