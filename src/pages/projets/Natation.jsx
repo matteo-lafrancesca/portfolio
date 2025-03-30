@@ -1,10 +1,6 @@
 import React from "react";
 import Layout from "../../layouts/Layout";
 
-// Importez les images (ajustez les chemins selon votre structure)
-import coachDashboardImg from "../../assets/images/coach_dashboard.jpg";
-import athleteDashboardImg from "../../assets/images/athlete_dashboard.jpg";
-
 const Natation = () => {
   return (
     <Layout>
@@ -21,7 +17,7 @@ const Natation = () => {
           </div>
           {/* Illustration */}
           <div className="flex justify-center">
-            <img src={coachDashboardImg} alt="Dashboard Coach" className="max-w-md rounded-lg shadow-xl" />
+            <img src={"/images/coach_dashboard.jpg"} alt="Dashboard Coach" className="max-w-md rounded-lg shadow-xl" />
           </div>
         </div>
 
@@ -36,7 +32,7 @@ const Natation = () => {
           </div>
           {/* Illustration */}
           <div className="flex justify-center">
-            <img src={athleteDashboardImg} alt="Dashboard Athlète" className="max-w-md rounded-lg shadow-xl" />
+            <img src={"/images/athlete_dashboard.jpg"} alt="Dashboard Athlète" className="max-w-md rounded-lg shadow-xl" />
           </div>
         </div>
       </div>

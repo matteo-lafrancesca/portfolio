@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../layouts/Layout";
-import illustration from "../assets/images/illustration.jpg"; // Assure-toi d'avoir l'image dans `src/assets/images/`
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -28,7 +27,7 @@ const Home = () => {
 
           {/* Image */}
           <div className="flex justify-center">
-            <img src={illustration} alt="Illustration" className="rounded-lg" />
+            <img src={"/images/illustration.jpg"} alt="Illustration" className="rounded-lg" />
           </div>
         </div>
       </div>

@@ -2,12 +2,6 @@ import React from "react";
 import Layout from "../layouts/Layout";
 import { Link } from "react-router-dom";
 
-// Importez les images (ajustez les chemins selon votre structure)
-import natationImg from "../assets/images/natation.jpg";
-import botDiscordImg from "../assets/images/bot_discord.jpg";
-import towerDefenseImg from "../assets/images/tower_defense.jpg";
-import portfolioImg from "../assets/images/portfolio.jpg";
-
 const Projets = () => {
   return (
     <Layout>
@@ -22,7 +16,7 @@ const Projets = () => {
         <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/projets/onswim" className="block h-full">
             <figure>
-              <img src={natationImg} alt="Natation" />
+              <img src={"/images/natation.jpg"} alt="Natation" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -39,7 +33,7 @@ const Projets = () => {
         <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="#" className="block h-full">
             <figure>
-              <img src={botDiscordImg} alt="Bot Discord" />
+              <img src={"/images/bot_discord.jpg"} alt="Bot Discord" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -56,7 +50,7 @@ const Projets = () => {
         <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="#" className="block h-full">
             <figure>
-              <img src={towerDefenseImg} alt="Tower Defense" />
+              <img src={"/images/tower_defense.jpg"} alt="Tower Defense" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -71,9 +65,9 @@ const Projets = () => {
       </div>
       <div className="flex justify-center">
         <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
-            <Link to="#" className="block h-full">
+            <Link to="/" className="block h-full">
                 <figure>
-                   <img src={portfolioImg} alt="Portfolio React" />
+                   <img src={"/images/portfolio.jpg"} alt="Portfolio React" />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">
