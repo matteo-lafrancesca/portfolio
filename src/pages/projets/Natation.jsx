@@ -1,5 +1,7 @@
 import React from "react";
 import Layout from "../../layouts/Layout";
+import athlete from '/images/athlete_dashboard.jpg';
+import coach from '/images/coach_dashboard.jpg';
 
 const Natation = () => {
   return (
@@ -17,7 +19,7 @@ const Natation = () => {
           </div>
           {/* Illustration */}
           <div className="flex justify-center">
-            <img src={"/images/coach_dashboard.jpg"} alt="Dashboard Coach" className="max-w-md rounded-lg shadow-xl" />
+            <img src={coach} alt="Dashboard Coach" className="max-w-md rounded-lg shadow-xl" />
           </div>
         </div>
 
@@ -32,7 +34,7 @@ const Natation = () => {
           </div>
           {/* Illustration */}
           <div className="flex justify-center">
-            <img src={"/images/athlete_dashboard.jpg"} alt="Dashboard Athlète" className="max-w-md rounded-lg shadow-xl" />
+            <img src={athlete} alt="Dashboard Athlète" className="max-w-md rounded-lg shadow-xl" />
           </div>
         </div>
       </div>

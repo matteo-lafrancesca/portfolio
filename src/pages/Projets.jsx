@@ -1,6 +1,10 @@
 import React from "react";
 import Layout from "../layouts/Layout";
 import { Link } from "react-router-dom";
+import natation from '/images/natation.jpg';
+import bot_discord from '/images/bot_discord.jpg';
+import tower_defense from '/images/tower_defense.jpg';
+import portfolio from '/images/portfolio.jpg';
 
 const Projets = () => {
   return (
@@ -16,7 +20,7 @@ const Projets = () => {
         <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/projets/onswim" className="block h-full">
             <figure>
-              <img src={"/images/natation.jpg"} alt="Natation" />
+              <img src={natation} alt="Natation" className="rounded-lg" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -33,7 +37,7 @@ const Projets = () => {
         <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="#" className="block h-full">
             <figure>
-              <img src={"/images/bot_discord.jpg"} alt="Bot Discord" />
+              <img src={bot_discord} alt="Bot Discord" className="rounded-lg" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -50,7 +54,7 @@ const Projets = () => {
         <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="#" className="block h-full">
             <figure>
-              <img src={"/images/tower_defense.jpg"} alt="Tower Defense" />
+              <img src={tower_defense} alt="Tower Defense" className="rounded-lg" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -67,7 +71,7 @@ const Projets = () => {
         <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
             <Link to="/" className="block h-full">
                 <figure>
-                   <img src={"/images/portfolio.jpg"} alt="Portfolio React" />
+                  <img src={portfolio} alt="Portfolio" className="rounded-lg" />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">
