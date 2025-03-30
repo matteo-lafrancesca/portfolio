@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Projets from "./pages/Projets";
 import Competences from "./pages/Competences";
@@ -7,9 +7,11 @@ import Contact from "./pages/Contact";
 import CV from "./pages/CV";
 import Natation from "./pages/projets/Natation";
 
+const basename = import.meta.env.PROD ? "/portfolio" : "/";
+
 function App() {
   return (
-    <Router>
+    <Router basename={basename}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projets" element={<Projets />} />
