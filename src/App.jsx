@@ -6,7 +6,8 @@ import Competences from "./pages/Competences";
 import Contact from "./pages/Contact";
 import CV from "./pages/CV";
 import Natation from "./pages/projets/Natation";
-import VeillePage from "./pages/Veille"; // Import de la page Veille
+import Memomix from "./pages/projets/Memomix"; // Importer Memomix
+import Veille from "./pages/Veille";
 
 const basename = import.meta.env.PROD ? "/portfolio" : "/";
 
@@ -20,7 +21,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cv" element={<CV />} />
         <Route path="/projets/onswim" element={<Natation />} />
-        <Route path="/veille" element={<VeillePage />} /> {/* Nouvelle route pour Veille */}
+        <Route path="/projets/memomix" element={<Memomix />} /> {/* Nouvelle route */}
+        <Route path="/veille" element={<Veille />} />
       </Routes>
     </Router>
   );

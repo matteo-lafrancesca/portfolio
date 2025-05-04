@@ -5,6 +5,7 @@ import natation from '/images/natation.jpg';
 import bot_discord from '/images/bot_discord.jpg';
 import tower_defense from '/images/tower_defense.jpg';
 import portfolio from '/images/portfolio.jpg';
+import memomix from '/images/memomix.jpg'; // Importer l'image pour Memomix
 
 const Projets = () => {
   return (
@@ -15,9 +16,9 @@ const Projets = () => {
       </div>
 
       {/* Section Projets */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-13">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-13 justify-items-center">
         {/* Projet Natation */}
-        <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+        <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/projets/onswim" className="block h-full">
             <figure>
               <img src={natation} alt="Natation" className="rounded-lg" />
@@ -34,7 +35,7 @@ const Projets = () => {
         </div>
 
         {/* Projet Bot Discord */}
-        <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+        <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="#" className="block h-full">
             <figure>
               <img src={bot_discord} alt="Bot Discord" className="rounded-lg" />
@@ -51,7 +52,7 @@ const Projets = () => {
         </div>
 
         {/* Projet Jeu de Tower Defense */}
-        <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+        <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="#" className="block h-full">
             <figure>
               <img src={tower_defense} alt="Tower Defense" className="rounded-lg" />
@@ -66,24 +67,41 @@ const Projets = () => {
             </div>
           </Link>
         </div>
+
+        {/* Projet Memomix */}
+        <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+          <Link to="/projets/memomix" className="block h-full">
+            <figure>
+              <img src={memomix} alt="Memomix" className="rounded-lg" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Memomix
+                {/* Badge JavaScript */}
+                <div className="badge badge-warning">Java</div>
+              </h2>
+              <p>Un jeu amusant et interactif conçu pour améliorer la mémoire tout en s'amusant.</p>
+            </div>
+          </Link>
+        </div>
+
+        {/* Projet Portfolio */}
+        <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+          <Link to="/" className="block h-full">
+            <figure>
+              <img src={portfolio} alt="Portfolio" className="rounded-lg" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Mon Portfolio
+                {/* Badge React */}
+                <div className="badge badge-info">React</div>
+              </h2>
+              <p>Le portfolio que vous êtes en train de consulter a été développé en utilisant le framework React et déployé à l'aide de Github Pages</p>
+            </div>
+          </Link>
+        </div>
       </div>
-      <div className="flex justify-center">
-        <div className="card bg-base-100 w-96 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
-            <Link to="/" className="block h-full">
-                <figure>
-                  <img src={portfolio} alt="Portfolio" className="rounded-lg" />
-                </figure>
-                <div className="card-body">
-                    <h2 className="card-title">
-                        Mon Portfolio
-                        {/* Badge React */}
-                        <div className="badge badge-info">React</div>
-                    </h2>
-                    <p>Le portfolio que vous êtes en train de consulter a été développé en utilisant le framework React et déployé à l'aide de Github Pages</p>
-                </div>
-            </Link>
-        </div>
-        </div>
     </Layout>
   );
 };

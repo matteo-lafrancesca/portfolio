@@ -13,6 +13,7 @@ const Contact = () => {
   
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(`Champ modifié : ${name}, Valeur : ${value}`); // Débogage
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
@@ -30,10 +31,6 @@ const Contact = () => {
       return;
     }
     
-    // Ici, vous pourriez ajouter votre logique d'envoi du formulaire
-    // Par exemple avec fetch ou axios
-    
-    // Simuler une réponse réussie pour cet exemple
     setSuccess("Votre message a été envoyé avec succès!");
     setFormData({ name: "", email: "", message: "" });
     setErrors({});
