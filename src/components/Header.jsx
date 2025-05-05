@@ -18,7 +18,7 @@ const Header = () => {
           <div className="space-x-8 text-lg">
             <NavLink to="/" text="Accueil" />
             <NavLink to="/projets" text="Projets" />
-            <NavLink to="/competences" text="Compétences" />
+            <NavLink to="/E5" text="E5" />
             <NavLink to="/veille" text="Veille" />
             <NavLink to="/contact" text="Contact" />
             <NavLink to="/cv" text="CV" />
