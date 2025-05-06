@@ -6,6 +6,7 @@ import bot_discord from '/images/bot_discord.jpg';
 import tower_defense from '/images/tower_defense.jpg';
 import portfolio from '/images/portfolio.jpg';
 import memomix from '/images/memomix.jpg'; // Importer l'image pour Memomix
+import reva from '/images/reva.jpg'; // Importer l'image pour Application REVA
 
 const Projets = () => {
   return (
@@ -81,6 +82,23 @@ const Projets = () => {
                 <div className="badge badge-warning">Java</div>
               </h2>
               <p>Un jeu amusant et interactif conçu pour améliorer la mémoire tout en s'amusant.</p>
+            </div>
+          </Link>
+        </div>
+
+        {/* Projet Application REVA */}
+        <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+          <Link to="/projets/application-mobile" className="block h-full">
+            <figure>
+              <img src={reva} alt="Application REVA" className="rounded-lg" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Application REVA
+                {/* Badge Mobile */}
+                <div className="badge badge-info">Mobile</div>
+              </h2>
+              <p>Une application mobile innovante pour optimiser la gestion des maintenances dans le secteur du BTP.</p>
             </div>
           </Link>
         </div>
