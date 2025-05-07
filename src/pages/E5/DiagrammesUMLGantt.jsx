@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
+// Importer les images
+import useCaseDiagram from "/images/use_case_diagram.jpg";
+import mcdDiagram from "/images/mcd_diagram.jpg";
 
 const DiagrammesUML = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -48,10 +51,10 @@ const DiagrammesUML = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/use_case_diagram.jpg")}
+              onClick={() => openModal(useCaseDiagram)}
             >
               <img
-                src="/images/use_case_diagram.jpg"
+                src={useCaseDiagram}
                 alt="Diagramme de Cas d'Utilisation"
                 className="w-full object-cover"
               />
@@ -83,10 +86,10 @@ const DiagrammesUML = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/mcd_diagram.jpg")}
+              onClick={() => openModal(mcdDiagram)}
             >
               <img
-                src="/images/mcd_diagram.jpg"
+                src={mcdDiagram}
                 alt="Diagramme MCD"
                 className="w-full object-cover"
               />

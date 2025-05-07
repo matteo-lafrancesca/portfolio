@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
+// Importer les images
+import laravelBreezeExample from "/images/laravel_breeze_example.jpg";
+import middlewareExample from "/images/middleware_example.jpg";
 
 const GestionRolesAuth = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,10 +47,10 @@ const GestionRolesAuth = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/laravel_breeze_example.jpg")}
+              onClick={() => openModal(laravelBreezeExample)}
             >
               <img
-                src="/images/laravel_breeze_example.jpg"
+                src={laravelBreezeExample}
                 alt="Exemple Laravel Breeze"
                 className="w-full object-cover"
               />
@@ -62,10 +65,10 @@ const GestionRolesAuth = () => {
           <div className="order-2 lg:order-1 flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/middleware_example.jpg")}
+              onClick={() => openModal(middlewareExample)}
             >
               <img
-                src="/images/middleware_example.jpg"
+                src={middlewareExample}
                 alt="Exemple Middleware Laravel"
                 className="w-full object-cover"
               />

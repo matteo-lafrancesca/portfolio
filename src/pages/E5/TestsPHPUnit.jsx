@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
+// Importation des images
+import phpunitTesting from "/images/phpunit_testing.jpg";
+import xdebugAnalysis from "/images/xdebug_analysis.jpg";
+import integrationTesting from "/images/integration_testing.jpg";
 
 const TestsPHPUnit = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,10 +43,10 @@ const TestsPHPUnit = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/phpunit_testing.jpg")}
+              onClick={() => openModal(phpunitTesting)}
             >
               <img
-                src="/images/phpunit_testing.jpg"
+                src={phpunitTesting}
                 alt="Tests avec PHPUnit"
                 className="w-full object-cover"
               />
@@ -65,10 +69,10 @@ const TestsPHPUnit = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/xdebug_analysis.jpg")}
+              onClick={() => openModal(xdebugAnalysis)}
             >
               <img
-                src="/images/xdebug_analysis.jpg"
+                src={xdebugAnalysis}
                 alt="Analyse avec Xdebug"
                 className="w-full object-cover"
               />
@@ -91,10 +95,10 @@ const TestsPHPUnit = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/integration_testing.jpg")}
+              onClick={() => openModal(integrationTesting)}
             >
               <img
-                src="/images/integration_testing.jpg"
+                src={integrationTesting}
                 alt="Tests d’Intégration"
                 className="w-full object-cover"
               />

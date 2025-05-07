@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
+// Importer les images
+import attestationMoocAnssi from "/images/attestation_mooc_annsi.jpg";
+import attestationRgpd1 from "/images/attestation_rgpd_1.jpg";
+import attestationRgpd2 from "/images/attestation_rgpd_2.jpg";
+import attestationRgpd3 from "/images/attestation_rgpd_3.jpg";
+import attestationRgpd4 from "/images/attestation_rgpd_4.jpg";
+import attestationRgpd5 from "/images/attestation_rgpd_5.jpg";
+import attestationCiscoNetAcad from "/images/attestation_cisco_netacad.jpg";
 
 const Certifications = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
   const rgpdImages = [
-    "/images/attestation_rgpd_1.jpg",
-    "/images/attestation_rgpd_2.jpg",
-    "/images/attestation_rgpd_3.jpg",
-    "/images/attestation_rgpd_4.jpg",
-    "/images/attestation_rgpd_5.jpg",
+    attestationRgpd1,
+    attestationRgpd2,
+    attestationRgpd3,
+    attestationRgpd4,
+    attestationRgpd5,
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -57,10 +65,10 @@ const Certifications = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/attestation_mooc_annsi.jpg")}
+              onClick={() => openModal(attestationMoocAnssi)}
             >
               <img
-                src="/images/attestation_mooc_annsi.jpg"
+                src={attestationMoocAnssi}
                 alt="Attestation MOOC ANSSI"
                 className="w-full object-cover"
               />
@@ -126,10 +134,10 @@ const Certifications = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/attestation_cisco_netacad.jpg")}
+              onClick={() => openModal(attestationCiscoNetAcad)}
             >
               <img
-                src="/images/attestation_cisco_netacad.jpg"
+                src={attestationCiscoNetAcad}
                 alt="Attestation Cisco NetAcad"
                 className="w-full object-cover"
               />

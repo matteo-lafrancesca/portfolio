@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
+// Importation des images
+import wikiDocumentation from "/images/wiki_documentation.jpg";
+import readmeExample from "/images/readme_example.jpg";
+import gitDocumentation from "/images/git_documentation.jpg";
 
 const WikiReadmeGit = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,10 +43,10 @@ const WikiReadmeGit = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/wiki_documentation.jpg")}
+              onClick={() => openModal(wikiDocumentation)}
             >
               <img
-                src="/images/wiki_documentation.jpg"
+                src={wikiDocumentation}
                 alt="Documentation avec Wikis"
                 className="w-full object-cover"
               />
@@ -65,10 +69,10 @@ const WikiReadmeGit = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/readme_example.jpg")}
+              onClick={() => openModal(readmeExample)}
             >
               <img
-                src="/images/readme_example.jpg"
+                src={readmeExample}
                 alt="Exemple de README"
                 className="w-full object-cover"
               />
@@ -91,10 +95,10 @@ const WikiReadmeGit = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/git_documentation.jpg")}
+              onClick={() => openModal(gitDocumentation)}
             >
               <img
-                src="/images/git_documentation.jpg"
+                src={gitDocumentation}
                 alt="Gestion de Documentation avec Git"
                 className="w-full object-cover"
               />

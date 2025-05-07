@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
+// Importer les images
+import designModernization from "/images/design_modernization.jpg";
+import backendOptimization from "/images/backend_optimization.jpg";
 
 const AmeliorationSiteWeb = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -48,10 +51,10 @@ const AmeliorationSiteWeb = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/design_modernization.jpg")}
+              onClick={() => openModal(designModernization)}
             >
               <img
-                src="/images/design_modernization.jpg"
+                src={designModernization}
                 alt="Modernisation du Design"
                 className="w-full object-cover"
               />
@@ -75,10 +78,10 @@ const AmeliorationSiteWeb = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/backend_optimization.jpg")}
+              onClick={() => openModal(backendOptimization)}
             >
               <img
-                src="/images/backend_optimization.jpg"
+                src={backendOptimization}
                 alt="Optimisation du Back-End"
                 className="w-full object-cover"
               />

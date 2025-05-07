@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
+// Importation des images
+import ticketingBoard from "/images/ticketing_board.jpg";
+import glpiManagement from "/images/glpi_management.jpg";
+import projectAnalysis from "/images/project_analysis.jpg";
 
 const TicketingTrelloGitGLPI = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,10 +43,10 @@ const TicketingTrelloGitGLPI = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/ticketing_board.jpg")}
+              onClick={() => openModal(ticketingBoard)}
             >
               <img
-                src="/images/ticketing_board.jpg"
+                src={ticketingBoard}
                 alt="Tableau de Suivi des Demandes"
                 className="w-full object-cover"
               />
@@ -66,10 +70,10 @@ const TicketingTrelloGitGLPI = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/glpi_management.jpg")}
+              onClick={() => openModal(glpiManagement)}
             >
               <img
-                src="/images/glpi_management.jpg"
+                src={glpiManagement}
                 alt="Utilisation de GLPI"
                 className="w-full object-cover"
               />
@@ -92,10 +96,10 @@ const TicketingTrelloGitGLPI = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/project_analysis.jpg")}
+              onClick={() => openModal(projectAnalysis)}
             >
               <img
-                src="/images/project_analysis.jpg"
+                src={projectAnalysis}
                 alt="Organisation et Analyse des Projets"
                 className="w-full object-cover"
               />

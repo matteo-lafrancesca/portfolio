@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
+// Importer les images
+import veeamUsage from "/images/veeam_usage.jpg";
+import codeBackup from "/images/code_backup.jpg";
 
 const PlansSauvegardeVeeam = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -43,10 +46,10 @@ const PlansSauvegardeVeeam = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/veeam_usage.jpg")}
+              onClick={() => openModal(veeamUsage)}
             >
               <img
-                src="/images/veeam_usage.jpg"
+                src={veeamUsage}
                 alt="Utilisation de Veeam"
                 className="w-full object-cover"
               />
@@ -71,10 +74,10 @@ const PlansSauvegardeVeeam = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/code_backup.jpg")}
+              onClick={() => openModal(codeBackup)}
             >
               <img
-                src="/images/code_backup.jpg"
+                src={codeBackup}
                 alt="Sauvegarde du Code des Projets"
                 className="w-full object-cover"
               />

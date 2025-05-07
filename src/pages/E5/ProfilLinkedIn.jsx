@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
+// Importation des images
+import linkedinProfile from "/images/linkedin_profile.jpg";
+import linkedinConnect from "/images/linkedin_connect.jpg";
 
 const ProfilLinkedIn = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,10 +62,10 @@ const ProfilLinkedIn = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/linkedin_profile.jpg")}
+              onClick={() => openModal(linkedinProfile)}
             >
               <img
-                src="/images/linkedin_profile.jpg"
+                src={linkedinProfile}
                 alt="Profil LinkedIn"
                 className="w-full object-cover"
               />
@@ -97,10 +100,10 @@ const ProfilLinkedIn = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/linkedin_connect.jpg")}
+              onClick={() => openModal(linkedinConnect)}
             >
               <img
-                src="/images/linkedin_connect.jpg"
+                src={linkedinConnect}
                 alt="Réseautage sur LinkedIn"
                 className="w-full object-cover"
               />
