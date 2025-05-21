@@ -2,6 +2,17 @@ import React from "react";
 import Layout from "../layouts/Layout";
 import { Link } from "react-router-dom";
 
+// Import des images pour chaque compétence/réalisation
+import imgAuth from "/images/roles_auth.jpg";
+import imgTicketing from "/images/ticketing.jpg";
+import imgVeeam from "/images/veeam.jpg";
+import imgUML from "/images/uml.jpg";
+import imgPhpunit from "/images/phpunit.jpg";
+import imgWiki from "/images/wiki.jpg";
+import imgLinkedin from "/images/linkedin.jpg";
+import imgCertif from "/images/certif.jpg";
+import imgWeb from "/images/website.jpg";
+
 const E5 = () => {
   return (
     <Layout>
@@ -12,11 +23,11 @@ const E5 = () => {
         </p>
       </div>
 
-      {/* Section E5 */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-13 justify-items-center">
         {/* Gestion de rôles et authentification */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/E5/gestion-roles-auth">
+            <img src={imgAuth} alt="Gestion de rôles et authentification" className="w-full h-44 object-cover rounded-t-lg" />
             <div className="card-body">
               <h2 className="card-title">
                 Gestion de rôles et authentification
@@ -32,6 +43,7 @@ const E5 = () => {
         {/* Ticketing avec Trello / Git / GLPI */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/E5/ticketing-trello-git-glpi">
+            <img src={imgTicketing} alt="Ticketing Trello/Git/GLPI" className="w-full h-44 object-cover rounded-t-lg" />
             <div className="card-body">
               <h2 className="card-title">
                 Ticketing avec Trello / Git / GLPI
@@ -47,6 +59,7 @@ const E5 = () => {
         {/* Réalisation de plans de sauvegarde avec Veeam */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/E5/plans-sauvegarde-veeam">
+            <img src={imgVeeam} alt="Plans de sauvegarde avec Veeam" className="w-full h-44 object-cover rounded-t-lg" />
             <div className="card-body">
               <h2 className="card-title">
                 Plans de sauvegarde avec Veeam
@@ -62,6 +75,7 @@ const E5 = () => {
         {/* Diagrammes d'utilisation / UML / Gantt */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/E5/diagrammes-uml-mcd">
+            <img src={imgUML} alt="Diagrammes UML et MCD" className="w-full h-44 object-cover rounded-t-lg" />
             <div className="card-body">
               <h2 className="card-title">
                 Diagrammes UML et MCD
@@ -77,6 +91,7 @@ const E5 = () => {
         {/* Tests avec PHPUnit */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/E5/tests-phpunit">
+            <img src={imgPhpunit} alt="Tests avec PHPUnit" className="w-full h-44 object-cover rounded-t-lg" />
             <div className="card-body">
               <h2 className="card-title">
                 Tests avec PHPUnit
@@ -92,6 +107,7 @@ const E5 = () => {
         {/* Wiki et Readme sur projets Git */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/E5/wiki-readme-git">
+            <img src={imgWiki} alt="Wiki et Readme Git" className="w-full h-44 object-cover rounded-t-lg" />
             <div className="card-body">
               <h2 className="card-title">
                 Wiki et Readme sur projets Git
@@ -107,6 +123,7 @@ const E5 = () => {
         {/* Création, optimisation et mise à jour de profil LinkedIn */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/E5/profil-linkedin">
+            <img src={imgLinkedin} alt="Optimisation profil LinkedIn" className="w-full h-44 object-cover rounded-t-lg" />
             <div className="card-body">
               <h2 className="card-title">
                 Optimisation de profil LinkedIn
@@ -119,9 +136,10 @@ const E5 = () => {
           </Link>
         </div>
 
-        {/* Certifications CNIL, ANNSI, Cisco */}
+        {/* Certifications CNIL, ANSSI, Cisco */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
           <Link to="/E5/certifications">
+            <img src={imgCertif} alt="Certifications CNIL, ANSSI, Cisco" className="w-full h-44 object-cover rounded-t-lg" />
             <div className="card-body">
               <h2 className="card-title">
                 Certifications CNIL, ANSSI, Cisco
@@ -134,20 +152,21 @@ const E5 = () => {
           </Link>
         </div>
 
-      {/* Amélioration du site web de l'entreprise */}
-      <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
-        <Link to="/E5/amelioration-site-web">
-          <div className="card-body">
-            <h2 className="card-title">
-              Amélioration du site web de l'entreprise
-              <div className="badge badge-success">Développement</div>
-            </h2>
-            <p>
-              Optimisation et refonte du site web pour améliorer l'expérience utilisateur et répondre aux objectifs de l'entreprise.
-            </p>
-          </div>
-        </Link>
-      </div>
+        {/* Amélioration du site web de l'entreprise */}
+        <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+          <Link to="/E5/amelioration-site-web">
+            <img src={imgWeb} alt="Amélioration site web entreprise" className="w-full h-44 object-cover rounded-t-lg" />
+            <div className="card-body">
+              <h2 className="card-title">
+                Amélioration du site web de l'entreprise
+                <div className="badge badge-success">Développement</div>
+              </h2>
+              <p>
+                Optimisation et refonte du site web pour améliorer l'expérience utilisateur et répondre aux objectifs de l'entreprise.
+              </p>
+            </div>
+          </Link>
+        </div>
       </div>
     </Layout>
   );

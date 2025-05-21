@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Layout from "../../layouts/Layout";
 
+// Import des images
+import revaPresentation from "/images/reva_presentation.jpg";
+import revaConception from "/images/reva_conception.jpg";
+
 const ApplicationMobile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
@@ -44,10 +48,10 @@ const ApplicationMobile = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/reva_presentation.jpg")}
+              onClick={() => openModal(revaPresentation)}
             >
               <img
-                src="/images/reva_presentation.jpg"
+                src={revaPresentation}
                 alt="Présentation de l'application REVA"
                 className="w-full object-cover"
               />
@@ -74,10 +78,10 @@ const ApplicationMobile = () => {
           <div className="flex justify-center">
             <div
               className="rounded-lg shadow-lg overflow-hidden w-full max-w-md cursor-pointer"
-              onClick={() => openModal("/images/reva_conception.jpg")}
+              onClick={() => openModal(revaConception)}
             >
               <img
-                src="/images/reva_conception.jpg"
+                src={revaConception}
                 alt="Conception de l'application REVA"
                 className="w-full object-cover"
               />

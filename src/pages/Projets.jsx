@@ -37,7 +37,7 @@ const Projets = () => {
 
         {/* Projet Bot Discord */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
-          <Link to="#" className="block h-full">
+          <Link to="/projets/mattebot" className="block h-full">
             <figure>
               <img src={bot_discord} alt="Bot Discord" className="rounded-lg" />
             </figure>
@@ -54,7 +54,7 @@ const Projets = () => {
 
         {/* Projet Jeu de Tower Defense */}
         <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
-          <Link to="#" className="block h-full">
+          <Link to="/projets/dungeon-defender" className="block h-full">
             <figure>
               <img src={tower_defense} alt="Tower Defense" className="rounded-lg" />
             </figure>

@@ -19,6 +19,8 @@ import Certifications from "./pages/E5/Certifications";
 import ApplicationMobile from "./pages/projets/ApplicationMobile"; // Nouvelle importation
 import Ticketing from "./pages/E5/TicketingTrelloGitGLPI"; // Importation pour la nouvelle page Ticketing
 import AmeliorationSiteWeb from "./pages/E5/AmeliorationSiteWeb";
+import Mattebot from "./pages/projets/Mattebot";
+import DungeonDefender from "./pages/projets/DungeonDefenderRoyale2";
 
 
 const basename = import.meta.env.PROD ? "/portfolio" : "/";
@@ -34,6 +36,8 @@ function App() {
         <Route path="/cv" element={<CV />} />
         <Route path="/projets/onswim" element={<Natation />} />
         <Route path="/projets/memomix" element={<Memomix />} />
+        <Route path="/projets/mattebot" element={<Mattebot />} />
+        <Route path="/projets/dungeon-defender" element={<DungeonDefender />} />
         <Route path="/veille" element={<Veille />} />
         <Route path="/E5/gestion-roles-auth" element={<GestionRolesAuth />} />
         <Route path="/E5/ticketing-trello-git-glpi" element={<TicketingTrelloGitGLPI />} />
