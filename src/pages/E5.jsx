@@ -167,6 +167,20 @@ const E5 = () => {
             </div>
           </Link>
         </div>
+
+        <div className="card bg-base-100 w-80 shadow-sm transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+          <Link to="/E5/tableau">
+            <div className="card-body">
+              <h2 className="card-title">
+                Tableau de Synthèse
+              </h2>
+              <p>
+                Le tableau de synthèse qui récapitule toutes les compétences et réalisations présentées dans le cadre de l'épreuve E5.
+              </p>
+            </div>
+          </Link>
+        </div>
+
       </div>
     </Layout>
   );

@@ -21,6 +21,7 @@ import Ticketing from "./pages/E5/TicketingTrelloGitGLPI"; // Importation pour l
 import AmeliorationSiteWeb from "./pages/E5/AmeliorationSiteWeb";
 import Mattebot from "./pages/projets/Mattebot";
 import DungeonDefender from "./pages/projets/DungeonDefenderRoyale2";
+import Tableau from "./pages/E5/Tableau";
 
 
 const basename = import.meta.env.PROD ? "/portfolio" : "/";
@@ -50,6 +51,7 @@ function App() {
         <Route path="/projets/application-mobile" element={<ApplicationMobile />} />
         <Route path="/E5/ticketing" element={<Ticketing />} />
         <Route path="/E5/amelioration-site-web" element={<AmeliorationSiteWeb />} />
+        <Route path="/E5/tableau" element={<Tableau />} />
       </Routes>
     </Router>
   );
