@@ -13,43 +13,38 @@
     "linkedin": "https://www.linkedin.com/in/mattéo-lafrancesca/"
   },
   "about": {
-    "bio": "J'ai découvert l'informatique très jeune, et je n'ai jamais vraiment décroché. Ce qui m'attirait n'était pas seulement d'utiliser un ordinateur, mais de comprendre comment les choses fonctionnent et créer des choses par moi même.\nTrès vite, j'ai pris goût à bidouiller : tester, casser, recommencer, et créer mes propres apps ou scripts plutôt que d'attendre qu'ils existent. Cette curiosité ne m'a jamais quitté, et j'aime toujours apprendre de nouvelles choses.\nAujourd'hui, cela m'a mené à concevoir des services web de A à Z : des interfaces soignées côté frontend, et les briques qui les font vivre côté backend. J'aime que les deux se répondent, qu'un site soit agréable à regarder et solide sous le capot."
+    "bio": "J'ai découvert l'informatique très jeune, et je n'ai jamais vraiment décroché. Ce qui m'attirait n'était pas seulement d'utiliser un ordinateur, mais de comprendre comment les choses fonctionnent et créer des choses par moi même.\nTrès vite, j'ai pris goût à éxperimenter  et créer mes propres apps ou scripts plutôt que d'attendre qu'ils existent. Cette curiosité ne m'a jamais quitté, et j'aime toujours apprendre de nouvelles choses.\nAujourd'hui, cela m'a mené à concevoir des services web de A à Z : des interfaces soignées côté frontend, et les briques qui les font vivre côté backend. J'aime que les deux se répondent, qu'un site soit agréable à regarder et à utiliser."
   },
   "experience": [
     {
       "period": "2025 - 2026",
       "title": "Concepteur Développeur d'Applications",
       "place": "Altervoice, Le Rheu",
-      "kind": "Alternance",
-      "description": "Développement d'applications et de composants interactifs avec React. Conception d'un lecteur streaming et d'un système de recommandation musicale, en équipe de développement."
+      "kind": "Alternance"
     },
     {
       "period": "2025-2026",
-      "title": "Bachelor SN - Développeur Fullstack",
+      "title": "Bachelor SN   Développeur Fullstack",
       "place": "EPSI Rennes",
-      "kind": "Formation",
-      "description": "Bachelor Systèmes et Numérique, parcours développeur fullstack."
+      "kind": "Formation"
     },
     {
       "period": "2023 - 2025",
       "title": "BTS SIO option SLAM",
       "place": "AFTEC Rennes",
-      "kind": "Formation",
-      "description": "Services informatiques aux organisations, option Solutions Logicielles et Applications Métiers."
+      "kind": "Formation"
     },
     {
       "period": "2021 - 2023",
       "title": "CUPGE",
       "place": "ESIR Rennes",
-      "kind": "Formation",
-      "description": "Cycle universitaire préparatoire aux grandes écoles."
+      "kind": "Formation"
     },
     {
       "period": "2021",
-      "title": "Baccalauréat Général, mention Bien",
+      "title": "Baccalauréat",
       "place": "Lycée Sévigné, Rennes",
-      "kind": "Formation",
-      "description": "Spécialités Maths et Physique-Chimie."
+      "kind": "Formation"
     }
   ],
   "stack": [

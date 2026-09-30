@@ -123,7 +123,37 @@ public/                 cv.pdf, images/projects/<slug>/
 
 ## 6. État actuel
 
-- Ancien code sauvegardé dans la branche `legacy`.
-- Branche `redesign` créée, vidée de l'ancien code (commit « Clean slate for redesign »).
-- `create-next-app` + `gsap` + `lenis` déjà installés (fait avant la Phase 0).
-- Prochaine étape : **Phase 0** (extraction du contenu du legacy : bio, expériences, stack, projets, `cv.pdf`, images des projets).
+### Fait
+- **Phase 0** : `content/content.json` rempli (identité, bio en 3 lignes = 3 paragraphes, liens, expériences sans description, stack, 2 projets **factices** `projet-exemple-1/2` avec `stack` = tags). `public/cv.pdf`, `CLAUDE.md` complété.
+- **Phase 1 (local)** : Next 16, React 19, Tailwind 4, TS, ESLint, `gsap`, `lenis`, `simple-icons`. Tokens dans `app/globals.css` : `data-theme="light"` (`#e9ecea`) / `"dark"` (`#090d0c`, voile + grain), accent orange `--accent: #ff5a1f`. Polices : Archivo (`font-display`), Instrument Serif italique (`font-serif`), Inter (`font-sans`), JetBrains Mono (`font-mono`).
+- **Phase 2 (layout + contenu, validée visuellement par moi)** :
+  - `app/page.tsx` assemble Header, Hero (clair), About (sombre), Projects (clair), Contact (sombre), Footer (sombre).
+  - Hero centré : prénom très grand en Archivo, nom en serif italique décalé à droite, tagline, boutons Projets / Contact / CV (le CV se télécharge ici uniquement).
+  - Header `absolute` (défile avec la page), texte gris plus grand en Inter majuscules.
+  - `SectionTitle` : grand titre Archivo avec un mot en serif italique orange (option `align="left"`). Les textes des titres sont des libellés d'interface écrits dans les sections.
+  - About : cadre `FlowField` (canvas 2D, particules à traînées dans un champ de courants, remous de souris, tourne en continu) à gauche de la bio en 3 paragraphes ; frise verticale « Mon parcours » (gros titres, points alternant autour du centre reliés par des obliques douces, trait + année vers le texte, filet sous le lieu à la largeur du texte) ; « Mes outils » en layout modèle (catégorie orange à gauche, grille de `TechCard` à droite avec logos `simple-icons`, mapping nom → icône dans `lib/icons.ts`, monogramme si pas d'icône).
+  - Projects : titre aligné à gauche dans le même conteneur que la liste ; `ProjectRow` = filet, numéro, titre géant, tags (stack), « Voir le projet → ».
+  - Contact : formulaire non branché (`ContactForm`, client).
+  - `app/projects/[slug]/page.tsx` : gabarit statique (placeholder « Capture à venir »), `generateStaticParams`.
+  - Scroll fluide + barre de scroll masquée en CSS (`globals.css`, `data-scroll-behavior="smooth"` sur `<html>`), désactivé si `prefers-reduced-motion`. À remplacer par Lenis en Phase 3.
+- Abandonnés après essais : cercles en grille, lampe à lave WebGL (formes jugées pas assez réalistes), champ de traits orientés.
+- `../portfolio-modele` (clone du portfolio inspirant) sert de référence de comportement **en lecture seule** : ne rien copier.
+
+### Reste à faire
+- **Phase 1** : déploiement Vercel (push de `redesign` + connexion du repo, **à faire avec mon accord**).
+- **Phase 3** : Lenis synchronisé ScrollTrigger, 2-3 animations réutilisables, transition de thème au scroll, `prefers-reduced-motion`.
+- **Phase 4** : preview d'image au survol des projets (`gsap.quickTo`), alternative mobile, vrais projets + captures, `next/image`.
+- **Phases 5 à 7** : transitions de page, finitions (loader, contact branché, SEO, a11y, perf), mise en ligne.
+- Vérifier le rendu mobile section par section (seul l'absence de débordement horizontal a été testé).
+
+### Consignes de travail
+- **Ne pas commiter à chaque modification** : commiter seulement quand je valide une phase (ou quand je le demande). Jamais de push sans mon accord.
+- Un serveur `npm run dev` tourne peut-être déjà sur le port 3000 ; `.claude/launch.json` contient une config `dev`.
+- Next 16 a des changements par rapport à ce que le modèle connaît : lire `node_modules/next/dist/docs/` avant de coder (voir `AGENTS.md`).
+- Navigateur intégré : le `zoom` par région ne marche pas, utiliser `screenshot`. Après un changement de code, recharger la page complète avant de juger un rendu canvas (le rechargement à chaud peut laisser des artefacts).
+
+### Prochaine étape
+**Phase 3** (système d'animation) : proposer d'abord le plan (provider Lenis, hook/composant d'animation au scroll, transition de thème), puis coder après mon accord.
+
+### Historique git (branche `redesign`)
+Commits : init + Phase 0, Phase 1 (tokens/polices), 3 réglages accent/grain, puis **Phase 2**. Rien n'est poussé.

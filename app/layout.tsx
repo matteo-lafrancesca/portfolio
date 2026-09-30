@@ -16,6 +16,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
+      data-scroll-behavior="smooth"
       className={`${archivo.variable} ${instrument.variable} ${inter.variable} ${jetbrains.variable} antialiased`}
     >
       <body>{children}</body>
