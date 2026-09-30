@@ -3,23 +3,86 @@
     "firstName": "Mattéo",
     "lastName": "Lafrancesca",
     "role": "Développeur web",
-    "tagline": "TODO: une phrase d'accroche",
-    "availability": "TODO: ex. Recherche une alternance en Bachelor développement",
-    "email": "TODO",
+    "tagline": "Passionné par les nouvelles technologies et la\nprogrammation, je suis curieux et adaptable.",
+    "availability": "Recherche un poste de développeur en CDI",
+    "email": "matteo.lafrancesca@gmail.com",
     "cv": "/cv.pdf"
   },
   "links": {
     "github": "https://github.com/matteo-lafrancesca",
-    "linkedin": "TODO"
+    "linkedin": "https://www.linkedin.com/in/mattéo-lafrancesca/"
   },
   "about": {
-    "bio": "J'ai 20 ans et je prépare un BTS SIO. Passionné par le développement, je souhaite poursuivre avec un Bachelor en développement pour perfectionner mes compétences et concrétiser mes projets."
+    "bio": "J'ai découvert l'informatique très jeune, et je n'ai jamais vraiment décroché. Ce qui m'attirait n'était pas seulement d'utiliser un ordinateur, mais de comprendre comment les choses fonctionnent et créer des choses par moi même.\nTrès vite, j'ai pris goût à bidouiller : tester, casser, recommencer, et créer mes propres apps ou scripts plutôt que d'attendre qu'ils existent. Cette curiosité ne m'a jamais quitté, et j'aime toujours apprendre de nouvelles choses.\nAujourd'hui, cela m'a mené à concevoir des services web de A à Z : des interfaces soignées côté frontend, et les briques qui les font vivre côté backend. J'aime que les deux se répondent, qu'un site soit agréable à regarder et solide sous le capot."
   },
   "experience": [
-    { "period": "TODO", "title": "TODO", "place": "TODO", "kind": "Formation", "description": "BTS SIO" }
+    {
+      "period": "2025 - 2026",
+      "title": "Concepteur Développeur d'Applications",
+      "place": "Altervoice, Le Rheu",
+      "kind": "Alternance",
+      "description": "Développement d'applications et de composants interactifs avec React. Conception d'un lecteur streaming et d'un système de recommandation musicale, en équipe de développement."
+    },
+    {
+      "period": "2025-2026",
+      "title": "Bachelor SN - Développeur Fullstack",
+      "place": "EPSI Rennes",
+      "kind": "Formation",
+      "description": "Bachelor Systèmes et Numérique, parcours développeur fullstack."
+    },
+    {
+      "period": "2023 - 2025",
+      "title": "BTS SIO option SLAM",
+      "place": "AFTEC Rennes",
+      "kind": "Formation",
+      "description": "Services informatiques aux organisations, option Solutions Logicielles et Applications Métiers."
+    },
+    {
+      "period": "2021 - 2023",
+      "title": "CUPGE",
+      "place": "ESIR Rennes",
+      "kind": "Formation",
+      "description": "Cycle universitaire préparatoire aux grandes écoles."
+    },
+    {
+      "period": "2021",
+      "title": "Baccalauréat Général, mention Bien",
+      "place": "Lycée Sévigné, Rennes",
+      "kind": "Formation",
+      "description": "Spécialités Maths et Physique-Chimie."
+    }
   ],
   "stack": [
-    { "category": "TODO", "items": ["TODO"] }
+    {
+      "category": "Langages",
+      "items": [
+        "TypeScript",
+        "Python",
+        "PHP",
+        "Java",
+        "SQL"
+      ]
+    },
+    {
+      "category": "Frameworks & Librairies",
+      "items": [
+        "React",
+        "Next.js",
+        "Laravel",
+        "Spring Boot"
+      ]
+    },
+    {
+      "category": "Outils",
+      "items": [
+        "Git",
+        "Docker",
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Figma"
+      ]
+    }
   ],
   "projects": [
     {
@@ -28,7 +91,10 @@
       "year": "2025",
       "summary": "Projet factice pour tester la liste et la page projet.",
       "description": "Description longue à remplacer.",
-      "stack": ["Next.js", "TypeScript"],
+      "stack": [
+        "Next.js",
+        "TypeScript"
+      ],
       "image": "/images/projects/placeholder.svg",
       "links": {}
     },
@@ -38,7 +104,10 @@
       "year": "2025",
       "summary": "Deuxième projet factice.",
       "description": "Description longue à remplacer.",
-      "stack": ["React", "Node.js"],
+      "stack": [
+        "React",
+        "Node.js"
+      ],
       "image": "/images/projects/placeholder.svg",
       "links": {}
     }
