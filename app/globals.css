@@ -17,7 +17,7 @@
 }
 
 :root {
-  --accent: #4fd68b;
+  --accent: #ff5a1f;
 }
 
 @theme inline {
@@ -41,7 +41,7 @@ body {
 /* Brouillard + grain du thème sombre */
 [data-theme="dark"] {
   background-image:
-    radial-gradient(ellipse at 20% 10%, rgb(79 214 139 / 0.06), transparent 50%),
+    radial-gradient(ellipse at 20% 10%, rgb(255 90 31 / 0.05), transparent 50%),
     radial-gradient(ellipse at 80% 90%, rgb(230 234 231 / 0.04), transparent 55%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
 }
