@@ -1,0 +1,46 @@
+{
+  "identity": {
+    "firstName": "Mattéo",
+    "lastName": "Lafrancesca",
+    "role": "Développeur web",
+    "tagline": "TODO: une phrase d'accroche",
+    "availability": "TODO: ex. Recherche une alternance en Bachelor développement",
+    "email": "TODO",
+    "cv": "/cv.pdf"
+  },
+  "links": {
+    "github": "https://github.com/matteo-lafrancesca",
+    "linkedin": "TODO"
+  },
+  "about": {
+    "bio": "J'ai 20 ans et je prépare un BTS SIO. Passionné par le développement, je souhaite poursuivre avec un Bachelor en développement pour perfectionner mes compétences et concrétiser mes projets."
+  },
+  "experience": [
+    { "period": "TODO", "title": "TODO", "place": "TODO", "kind": "Formation", "description": "BTS SIO" }
+  ],
+  "stack": [
+    { "category": "TODO", "items": ["TODO"] }
+  ],
+  "projects": [
+    {
+      "slug": "projet-exemple-1",
+      "title": "Projet exemple 1",
+      "year": "2025",
+      "summary": "Projet factice pour tester la liste et la page projet.",
+      "description": "Description longue à remplacer.",
+      "stack": ["Next.js", "TypeScript"],
+      "image": "/images/projects/placeholder.svg",
+      "links": {}
+    },
+    {
+      "slug": "projet-exemple-2",
+      "title": "Projet exemple 2",
+      "year": "2025",
+      "summary": "Deuxième projet factice.",
+      "description": "Description longue à remplacer.",
+      "stack": ["React", "Node.js"],
+      "image": "/images/projects/placeholder.svg",
+      "links": {}
+    }
+  ]
+}
