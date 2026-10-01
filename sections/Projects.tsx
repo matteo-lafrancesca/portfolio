@@ -1,19 +1,15 @@
 import ThemeSection from "@/components/ThemeSection";
 import SectionTitle from "@/components/SectionTitle";
-import ProjectRow from "@/components/ProjectRow";
+import ProjectList from "@/components/ProjectList";
 import { content } from "@/lib/content";
 
 export default function Projects() {
   return (
-    <ThemeSection theme="light" id="projects">
+    <ThemeSection theme="light" id="projects" variant="arc">
       <div className="mx-auto max-w-6xl">
         <SectionTitle label="Projets" before="Mes" accent="projets" align="left" />
       </div>
-      <div className="mx-auto mt-16 max-w-6xl border-b border-line">
-        {content.projects.map((p, i) => (
-          <ProjectRow key={p.slug} project={p} index={i} />
-        ))}
-      </div>
+      <ProjectList projects={content.projects} />
     </ThemeSection>
   );
 }

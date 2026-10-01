@@ -1,3 +1,6 @@
+import SmoothScroll from "@/components/SmoothScroll";
+import HeroIntro from "@/components/HeroIntro";
+import CurtainDim from "@/components/CurtainDim";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/sections/Hero";
@@ -8,6 +11,9 @@ import Contact from "@/sections/Contact";
 export default function Home() {
   return (
     <>
+      <SmoothScroll />
+      <CurtainDim />
+      <HeroIntro />
       <Header />
       <main>
         <Hero />

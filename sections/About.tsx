@@ -1,23 +1,25 @@
 import ThemeSection from "@/components/ThemeSection";
 import SectionTitle from "@/components/SectionTitle";
 import FlowField from "@/components/FlowField";
+import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 import TechCard from "@/components/TechCard";
 import { content } from "@/lib/content";
 
 export default function About() {
   const { about, experience, stack } = content;
   return (
-    <ThemeSection theme="dark" id="about">
+    <ThemeSection theme="dark" id="about" variant="curtain">
       <SectionTitle label="À propos" before="Qui" accent="suis" after="-je ?" />
       <div className="mx-auto mt-16 grid max-w-6xl items-center gap-12 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-16">
-        <div className="mx-auto h-[360px] w-full max-w-sm overflow-hidden rounded-2xl border border-line bg-fg/[0.03] md:h-[480px]">
+        <Parallax className="mx-auto h-[360px] w-full max-w-sm overflow-hidden rounded-2xl border border-line bg-fg/[0.03] md:h-[480px]">
           <FlowField />
-        </div>
-        <div className="space-y-5 text-base leading-relaxed text-muted md:text-[1.05rem]">
+        </Parallax>
+        <Reveal stagger className="space-y-5 text-base leading-relaxed text-muted md:text-[1.05rem]">
           {about.bio.split("\n").map((para) => (
             <p key={para}>{para}</p>
           ))}
-        </div>
+        </Reveal>
       </div>
 
       <div className="mt-32">
@@ -48,12 +50,14 @@ export default function About() {
                   <line x1={right ? 12 : 0} y1="0" x2={right ? 0 : 12} y2="100" stroke="currentColor" strokeWidth="1" vectorEffect="non-scaling-stroke" />
                 </svg>
               )}
+              <Reveal>
               <p className="font-mono text-xs uppercase tracking-widest text-accent">
                 {e.kind}
                 <span className="md:hidden"> · {e.period}</span>
               </p>
-              <h3 className="font-display mt-4 md:mt-10 text-4xl uppercase leading-[0.9] tracking-[-0.04em] md:text-[clamp(2.25rem,3.9vw,3.75rem)]">{e.title}</h3>
+              <h3 className="font-display mt-4 md:mt-10 text-4xl uppercase leading-[0.9] tracking-[-0.04em] transition-colors duration-300 hover:text-accent md:text-[clamp(2.25rem,3.9vw,3.75rem)]">{e.title}</h3>
               <p className={`mt-6 w-fit border-t border-line pt-4 font-mono text-sm text-muted ${right ? "" : "md:ml-auto"}`}>{e.place}</p>
+              </Reveal>
             </li>
           );
         })}
@@ -68,11 +72,11 @@ export default function About() {
             <div>
               <h3 className="font-display text-3xl uppercase leading-[0.95] tracking-[-0.03em] text-accent md:text-5xl">{s.category}</h3>
             </div>
-            <ul className="grid grid-cols-2 gap-3 lg:grid-cols-3">
+            <Reveal stagger className="grid grid-cols-2 gap-3 lg:grid-cols-3">
               {s.items.map((name) => (
                 <TechCard key={name} name={name} />
               ))}
-            </ul>
+            </Reveal>
           </div>
         ))}
       </div>

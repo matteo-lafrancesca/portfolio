@@ -136,15 +136,26 @@ public/                 cv.pdf, images/projects/<slug>/
   - Contact : formulaire non branché (`ContactForm`, client).
   - `app/projects/[slug]/page.tsx` : gabarit statique (placeholder « Capture à venir »), `generateStaticParams`.
   - Scroll fluide + barre de scroll masquée en CSS (`globals.css`, `data-scroll-behavior="smooth"` sur `<html>`), désactivé si `prefers-reduced-motion`. À remplacer par Lenis en Phase 3.
+- **Phase 3 (animations, validée visuellement par moi sauf points signalés)** :
+  - `lib/gsap.ts` (ScrollTrigger + SplitText, `motionOK()` pour `prefers-reduced-motion`), `SmoothScroll` (Lenis sur le ticker GSAP, désactivé en reduced-motion et tactile, ancres via Lenis).
+  - Réutilisables : `Reveal` (fondu + montée, `stagger` plafonné à 0,4 s), `SplitHeading` (mots ou caractères ; `wave`/`waveFrom` : vague au survol du nom du Hero, prénom droite→gauche, nom gauche→droite, sans changement de couleur), `Parallax` (cadre FlowField), `Magnetic`, `RollText` (texte qui défile au survol, `hover` = autre texte).
+  - Transitions : Hero collé (`sticky`) recouvert par l'About en rideau (coins arrondis, chevauchement), le contenu du Hero (`[data-curtain]`) s'efface, rétrécit et monte (`CurtainDim`) ; arc très léger entre About→Projets→Contact (`ThemeSection` variantes `hero | curtain | arc | last | plain`). Contact→Footer sans arc.
+  - `HeroIntro` : header, tagline/rôle, boutons apparaissent successivement (éléments `[data-intro]` masqués en CSS sous `no-preference`).
+  - Boutons (`Button.tsx`) : magnétiques, texte qui défile vers un autre texte au survol (Projets→Découvrir, Contact→Écrivons-nous, CV→Ouvrir, Envoyer→C'est parti). Le CV s'ouvre dans un nouvel onglet (pas de téléchargement).
+  - Hovers : cartes stack (icône tourne), lignes de projet, titres d'expérience, liens, email.
+  - `ProjectList` : aperçu flottant qui suit le curseur, penche selon la vitesse, défile entre projets (`quickTo`), désactivé tactile/reduced-motion. Images = champ `image` des projets (placeholder pour l'instant, `next/image` `unoptimized`).
+  - Texte non sélectionnable (`user-select: none`, sauf `input`/`textarea`).
+  - Footer : Menu / Réseaux (GitHub, LinkedIn) / bouton retour en haut ; 3e colonne volontairement vide (idées : disponibilité, email, localisation, CV, stack du site).
+  - Contact : accroche, formulaire à étiquettes flottantes (toujours non branché), contact direct avec `CopyEmail` (clic = copie).
 - Abandonnés après essais : cercles en grille, lampe à lave WebGL (formes jugées pas assez réalistes), champ de traits orientés.
 - `../portfolio-modele` (clone du portfolio inspirant) sert de référence de comportement **en lecture seule** : ne rien copier.
 
 ### Reste à faire
 - **Phase 1** : déploiement Vercel (push de `redesign` + connexion du repo, **à faire avec mon accord**).
-- **Phase 3** : Lenis synchronisé ScrollTrigger, 2-3 animations réutilisables, transition de thème au scroll, `prefers-reduced-motion`.
-- **Phase 4** : preview d'image au survol des projets (`gsap.quickTo`), alternative mobile, vrais projets + captures, `next/image`.
+- **Phase 4** : vrais projets + captures (champ `image`), alternative mobile à l'aperçu au survol, `next/image` optimisé, pages `/projects/[slug]` finalisées. (Aperçu au survol déjà fait.)
 - **Phases 5 à 7** : transitions de page, finitions (loader, contact branché, SEO, a11y, perf), mise en ligne.
-- Vérifier le rendu mobile section par section (seul l'absence de débordement horizontal a été testé).
+- Vérifier le rendu mobile section par section et tout le comportement des animations dans un vrai navigateur (le navigateur intégré de Claude ne fait pas avancer les animations quand son panneau est masqué : `requestAnimationFrame` à l'arrêt, les captures expirent).
+- Idée écartée pour l'instant : curseur personnalisé du modèle.
 
 ### Consignes de travail
 - **Ne pas commiter à chaque modification** : commiter seulement quand je valide une phase (ou quand je le demande). Jamais de push sans mon accord.
@@ -153,7 +164,7 @@ public/                 cv.pdf, images/projects/<slug>/
 - Navigateur intégré : le `zoom` par région ne marche pas, utiliser `screenshot`. Après un changement de code, recharger la page complète avant de juger un rendu canvas (le rechargement à chaud peut laisser des artefacts).
 
 ### Prochaine étape
-**Phase 3** (système d'animation) : proposer d'abord le plan (provider Lenis, hook/composant d'animation au scroll, transition de thème), puis coder après mon accord.
+**Phase 4** : remplacer les projets factices par les vrais (contenu legacy, captures), prévoir l'alternative mobile à l'aperçu au survol, finaliser les pages projet. Proposer d'abord le plan, coder après mon accord.
 
 ### Historique git (branche `redesign`)
-Commits : init + Phase 0, Phase 1 (tokens/polices), 3 réglages accent/grain, puis **Phase 2**. Rien n'est poussé.
+Commits : init + Phase 0, Phase 1 (tokens/polices), 3 réglages accent/grain, **Phase 2**, puis **Phase 3** (animations + footer + contact). Rien n'est poussé.

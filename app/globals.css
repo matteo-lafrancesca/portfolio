@@ -59,3 +59,37 @@ html {
 html::-webkit-scrollbar {
   display: none;
 }
+
+/* Lenis gère le défilement : pas de scroll-behavior natif */
+html.lenis,
+html.lenis body {
+  scroll-behavior: auto;
+}
+
+/* Moins de mouvement : transitions quasi instantanées */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Texte non sélectionnable, sauf dans les champs de saisie */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Éléments révélés par HeroIntro */
+@media (prefers-reduced-motion: no-preference) {
+  [data-intro] {
+    opacity: 0;
+  }
+}
