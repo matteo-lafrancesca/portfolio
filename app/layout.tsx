@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import PageTransition from "@/components/PageTransition";
 import { content } from "@/lib/content";
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body>
         <PageTransition>{children}</PageTransition>
+        <Analytics />
       </body>
     </html>
   );
