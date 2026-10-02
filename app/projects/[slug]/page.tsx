@@ -1,42 +1,70 @@
-import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import ThemeSection from "@/components/ThemeSection";
+import Reveal from "@/components/Reveal";
+import ProjectHero from "@/components/project/ProjectHero";
+import ProjectSection from "@/components/project/ProjectSection";
+import KeyPoints from "@/components/project/KeyPoints";
+import Gallery from "@/components/project/Gallery";
+import Explore from "@/components/project/Explore";
+import ProjectNav from "@/components/project/ProjectNav";
+import ContactBar from "@/components/project/ContactBar";
 import { content } from "@/lib/content";
 
+const { projects } = content;
+
 export function generateStaticParams() {
-  return content.projects.map((p) => ({ slug: p.slug }));
+  return projects.map((p) => ({ slug: p.slug }));
 }
 
 export default async function ProjectPage({ params }: PageProps<"/projects/[slug]">) {
   const { slug } = await params;
-  const project = content.projects.find((p) => p.slug === slug);
-  if (!project) notFound();
+  const i = projects.findIndex((p) => p.slug === slug);
+  if (i < 0) notFound();
+
+  const project = projects[i];
+  // Navigation circulaire ; masquée s'il n'y a qu'un projet.
+  const prev = projects[(i - 1 + projects.length) % projects.length];
+  const next = projects[(i + 1) % projects.length];
 
   return (
     <>
+      <SmoothScroll />
       <Header />
       <main>
-        <ThemeSection theme="light" className="min-h-svh pt-40">
-          <p className="font-mono text-xs uppercase tracking-widest text-accent">{project.year}</p>
-          <h1 className="font-display mt-4 text-5xl uppercase leading-none md:text-8xl">{project.title}</h1>
-          <p className="mt-8 max-w-2xl text-lg text-muted">{project.summary}</p>
-          <div className="mt-12 flex aspect-video items-center justify-center border border-line font-mono text-xs uppercase tracking-widest text-muted">
-            Capture à venir
+        <ThemeSection theme="dark" variant="plain" className="pt-24 pb-10 md:pt-32 md:pb-14">
+          <div className="mx-auto flex max-w-6xl flex-col gap-16 md:gap-24">
+            <ProjectHero project={project} />
+            <Reveal>
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-line md:w-4/5">
+                <Image src={project.image} alt={project.title} fill priority sizes="(min-width: 1152px) 900px, 100vw" className="object-cover object-top" />
+              </div>
+            </Reveal>
+            <div className="flex flex-col gap-10 md:gap-16">
+              <ProjectSection label="Présentation" large>{project.description}</ProjectSection>
+              {project.architecture && <ProjectSection label="Architecture">{project.architecture}</ProjectSection>}
+              {project.technical && <ProjectSection label="Points techniques">{project.technical}</ProjectSection>}
+            </div>
+            {project.keyPoints && <KeyPoints points={project.keyPoints} />}
+            {project.images && <Gallery title={project.title} images={project.images} />}
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">(Construit avec)</p>
+              <Reveal className="mt-5">
+                <ul className="flex flex-wrap gap-2">
+                  {project.stack.map((s) => (
+                    <li key={s} className="rounded-full border border-line px-4 py-1.5 text-sm">{s}</li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+            <Explore links={project.links} />
+            {projects.length > 1 && <ProjectNav prev={prev} next={next} />}
+            <ContactBar />
           </div>
-          <p className="mt-12 max-w-2xl text-lg">{project.description}</p>
-          <ul className="mt-8 flex flex-wrap gap-2">
-            {project.stack.map((s) => (
-              <li key={s} className="rounded-full border border-line px-4 py-1.5 text-sm">{s}</li>
-            ))}
-          </ul>
-          <Link href="/#projects" className="mt-16 inline-block font-mono text-xs uppercase tracking-widest hover:text-accent">
-            ← Retour aux projets
-          </Link>
         </ThemeSection>
       </main>
-      <Footer />
     </>
   );
 }

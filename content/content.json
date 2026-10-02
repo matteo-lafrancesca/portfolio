@@ -81,30 +81,181 @@
   ],
   "projects": [
     {
-      "slug": "projet-exemple-1",
-      "title": "Projet exemple 1",
-      "year": "2025",
-      "summary": "Projet factice pour tester la liste et la page projet.",
-      "description": "Description longue à remplacer.",
-      "stack": [
-        "Next.js",
-        "TypeScript"
+      "slug": "lecteur-streaming-umf",
+      "title": "Lecteur Streaming UMF",
+      "year": "2026",
+      "summary": "Lecteur de musique en streaming en marque blanche, intégrable sur un site web ou dans une application mobile. Réalisé chez Altervoice pour Universal Music France.",
+      "description": "Lecteur de streaming musical conçu chez Altervoice pour Universal Music France. Il s'intègre comme widget sur n'importe quel site ou se déploie en application mobile, et s'adapte à l'identité visuelle de chaque client grâce à un thème entièrement configurable.\nLivré en production sur le site d'un client d'Universal, il sert de base réutilisable pour de futurs lecteurs sur mesure. Conception et développement assurés de bout en bout.",
+      "architecture": "Front-end consommant l'API REST d'Universal. Le lecteur est développé en React et TypeScript et buildé avec Vite en deux livrables issus d'une même base de code : un bundle UMD pour le widget web, et une application packagée avec Capacitor pour Android et iOS.\nLe code est découpé par responsabilité : état global géré avec React Context (lecture audio, interface, authentification), couche de services pour les appels API, hooks dédiés par domaine et styles isolés en CSS Modules pour ne pas interférer avec le site hôte. Le thème (couleurs, tokens de design) est configurable pour chaque client.",
+      "technical": "Le streaming audio repose sur HLS (hls.js), avec un repli natif sur Safari. L'authentification par JWT est transparente : le token est rafraîchi automatiquement à son expiration, sans interrompre l'écoute, et la lecture reprend après une coupure réseau.\nLes performances sont optimisées par le préchargement des prochains morceaux de la file d'attente et par un cache persistant (IndexedDB) des pochettes et métadonnées. L'interface est responsive : barre déplaçable sur desktop, panneau extensible sur mobile, avec contrôle depuis l'écran de verrouillage via l'API Media Session.\nLe reporting des écoutes exigé par Universal est envoyé par lots et conservé hors ligne en cas d'échec.",
+      "keyPoints": [
+        "Conception et développement de bout en bout, de l'intégration de l'API à la mise en production.",
+        "Lecteur en marque blanche, entièrement thémable et intégrable en widget (UMD) ou en application mobile (Capacitor).",
+        "Streaming HLS avec authentification JWT, refresh automatique des tokens et reprise après erreur réseau.",
+        "Performance : préchargement de la file d'attente et cache persistant (IndexedDB).",
+        "Interface responsive desktop et mobile, avec file d'attente en drag and drop.",
+        "Reporting des écoutes par lots, avec file persistante hors ligne."
       ],
-      "image": "/images/projects/placeholder.svg",
-      "links": {}
-    },
-    {
-      "slug": "projet-exemple-2",
-      "title": "Projet exemple 2",
-      "year": "2025",
-      "summary": "Deuxième projet factice.",
-      "description": "Description longue à remplacer.",
       "stack": [
         "React",
-        "Node.js"
+        "TypeScript",
+        "Vite",
+        "HLS.js",
+        "Capacitor",
+        "dnd-kit"
       ],
-      "image": "/images/projects/placeholder.svg",
-      "links": {}
+      "image": "/images/projects/lecteur-streaming-umf/cover.webp",
+      "links": {},
+      "images": [
+        {
+          "src": "/images/projects/lecteur-streaming-umf/1.webp",
+          "width": 1660,
+          "height": 117
+        },
+        {
+          "src": "/images/projects/lecteur-streaming-umf/2.webp",
+          "width": 407,
+          "height": 142,
+          "displayWidth": 260
+        },
+        {
+          "src": "/images/projects/lecteur-streaming-umf/3.webp",
+          "width": 1101,
+          "height": 589
+        },
+        {
+          "src": "/images/projects/lecteur-streaming-umf/4.webp",
+          "width": 1105,
+          "height": 587
+        },
+        {
+          "src": "/images/projects/lecteur-streaming-umf/5.webp",
+          "width": 778,
+          "height": 793
+        }
+      ]
+    },
+    {
+      "slug": "umf-deepsearch",
+      "title": "UMF DeepSearch",
+      "year": "2026",
+      "summary": "Plateforme d'enrichissement automatique de catalogue musical, avec recherche hybride, recommandation et exploration sous forme de graphe. Réalisée chez Altervoice pour Universal Music France.",
+      "description": "Plateforme d'enrichissement et d'exploration de catalogue musical conçue chez Altervoice pour Universal Music France. À partir de simples fichiers audio, elle enrichit automatiquement chaque morceau, puis permet de parcourir le catalogue par recherche en langage naturel, par similarité sonore ou par recommandation à partir d'un titre.\nLe projet couvre toute la chaîne : analyse et enrichissement des morceaux, moteur de recherche et de recommandation, et interface web. Réalisé en équipe, il a convaincu Universal de la valeur de l'approche.",
+      "architecture": "La plateforme se compose d'un backend Python (API FastAPI, workers Celery, Redis, PostgreSQL avec pgvector), orchestré par Docker Compose, et d'un frontend Next.js, React et TypeScript qui consomme l'API REST.\nChaque morceau passe par un pipeline asynchrone d'enrichissement : analyse du signal audio (DSP), embeddings audio et textuels, récupération des métadonnées et des paroles auprès de services externes, puis validation et nettoyage par un LLM. Les résultats sont stockés dans une base vectorielle, ce qui permet à l'API de croiser recherche textuelle, similarité vectorielle et signaux audio.",
+      "technical": "Côté audio, la plateforme extrait des caractéristiques du signal (tempo, tonalité, énergie…) et calcule des embeddings de morceaux entiers, qui permettent de comparer des titres par leur sonorité. Les textes (paroles, métadonnées, requêtes) sont vectorisés avec un même modèle multilingue, pour rechercher en langage naturel, quelle que soit la langue.\nLe moteur de recommandation combine plusieurs signaux (similarité audio, texte, genres, tags) selon des stratégies configurables, avec de la diversité d'artistes. L'interface propose un graphe interactif en D3.js pour naviguer de morceau en morceau, plusieurs modes de recherche, des réglages de stratégie et le détail des scores de chaque résultat.",
+      "keyPoints": [
+        "Réalisé en équipe pour Universal Music France, projet qui a convaincu le client.",
+        "Pipeline d'enrichissement du catalogue : analyse audio (DSP), embeddings, métadonnées et paroles.",
+        "Recherche hybride combinant langage naturel, vecteurs (pgvector) et signaux audio.",
+        "Moteur de recommandation multi-signaux, avec des stratégies configurables.",
+        "Frontend Next.js avec graphe d'exploration interactif en D3.js.",
+        "Stack complète conteneurisée avec Docker Compose."
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "D3.js",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "pgvector",
+        "Docker"
+      ],
+      "image": "/images/projects/umf-deepsearch/cover.webp",
+      "links": {},
+      "images": [
+        {
+          "src": "/images/projects/umf-deepsearch/1.webp",
+          "width": 917,
+          "height": 1013
+        },
+        {
+          "src": "/images/projects/umf-deepsearch/2.webp",
+          "width": 1804,
+          "height": 1013
+        },
+        {
+          "src": "/images/projects/umf-deepsearch/3.webp",
+          "width": 1661,
+          "height": 1013
+        }
+      ]
+    },
+    {
+      "slug": "comi",
+      "title": "Comi",
+      "year": "2026",
+      "summary": "Application web mobile de planification des repas, qui génère automatiquement la liste de courses de la semaine. Déployée en production et utilisée au quotidien.",
+      "description": "Application web progressive (PWA) de planification des repas : l'utilisateur compose ses recettes, remplit son planning hebdomadaire et obtient automatiquement la liste de courses correspondante, classée par rayon. La reconnaissance de plats par IA permet de générer une recette à partir d'une simple photo.\nConçue, développée et hébergée de bout en bout, avec une approche mobile-first et une installation sur l'écran d'accueil comme une application native. Déployée en production sur serveur dédié, elle est utilisée au quotidien par une dizaine d'utilisateurs.",
+      "architecture": "Application full-stack Next.js 16 (App Router) et React 19 en TypeScript, avec des Route Handlers pour l'API REST. Les données sont stockées en SQLite via Prisma (utilisateurs, recettes, ingrédients, planning, listes de courses), et les photos sont hébergées avec Uploadthing. Le style repose sur Tailwind CSS v4 et un design system sobre, avec mode sombre.\nL'interface est mobile-first : navigation par onglets sur téléphone, barre latérale sur ordinateur, tiroirs tactiles pour les formulaires, et manifeste PWA pour l'installation en plein écran.",
+      "technical": "L'authentification repose sur des JWT stockés dans des cookies sécurisés, avec un refresh token à rotation qui renouvelle la session sans reconnexion, et un middleware qui protège les routes. Les mots de passe sont hachés avec bcrypt.\nLa liste de courses agrège les ingrédients de la semaine par quantité et unité, les classe par rayon à partir d'une base de plus de 400 ingrédients, et gère les accords français (pluriels, élision). La reconnaissance de plats appelle l'API Gemini avec une image et réutilise les ingrédients déjà en base. Un soin particulier est apporté à l'expérience PWA sur iOS : zones sûres, hauteur du viewport, blocage des gestes de retour de Safari, cache de navigation entre les pages et glisser-déposer tactile.",
+      "keyPoints": [
+        "Produit complet conçu, développé et hébergé en autonomie, de la base de données à l'interface.",
+        "En production sur VPS, avec une dizaine d'utilisateurs actifs au quotidien.",
+        "Planning hebdomadaire des repas et génération automatique de la liste de courses par rayon.",
+        "Reconnaissance de plats par IA (Gemini) pour pré-remplir une recette.",
+        "Authentification sécurisée : JWT, refresh token à rotation, cookies sécurisés.",
+        "PWA mobile-first optimisée pour iOS, avec mode sombre et cache de navigation."
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Prisma",
+        "SQLite",
+        "Gemini API",
+        "Uploadthing"
+      ],
+      "image": "/images/projects/comi/cover.webp",
+      "links": {
+        "live": "https://magalfu.ddns.net/comi",
+        "repo": "https://github.com/matteo-lafrancesca/comi"
+      },
+      "images": [
+        {
+          "src": "/images/projects/comi/1.webp",
+          "width": 1919,
+          "height": 1074
+        },
+        {
+          "src": "/images/projects/comi/2.webp",
+          "width": 1919,
+          "height": 1079
+        },
+        {
+          "src": "/images/projects/comi/3.webp",
+          "width": 1919,
+          "height": 1079
+        },
+        {
+          "src": "/images/projects/comi/4.webp",
+          "width": 1919,
+          "height": 1079
+        },
+        {
+          "src": "/images/projects/comi/5.webp",
+          "width": 390,
+          "height": 842
+        },
+        {
+          "src": "/images/projects/comi/6.webp",
+          "width": 391,
+          "height": 845
+        },
+        {
+          "src": "/images/projects/comi/7.webp",
+          "width": 391,
+          "height": 845
+        },
+        {
+          "src": "/images/projects/comi/8.webp",
+          "width": 1919,
+          "height": 1079
+        }
+      ]
     }
   ]
 }

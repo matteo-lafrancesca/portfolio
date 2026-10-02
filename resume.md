@@ -147,14 +147,24 @@ public/                 cv.pdf, images/projects/<slug>/
   - Texte non sélectionnable (`user-select: none`, sauf `input`/`textarea`).
   - Footer : Menu / Réseaux (GitHub, LinkedIn) / bouton retour en haut ; 3e colonne volontairement vide (idées : disponibilité, email, localisation, CV, stack du site).
   - Contact : accroche, formulaire à étiquettes flottantes (toujours non branché), contact direct avec `CopyEmail` (clic = copie).
-- Abandonnés après essais : cercles en grille, lampe à lave WebGL (formes jugées pas assez réalistes), champ de traits orientés.
+
+- **Phase 4 (pages projet + contenu, en cours)** :
+  - Page `/projects/[slug]` refaite, tout en thème sombre : retour, année, titre (SplitHeading), résumé + boutons Live / Code (optionnels), cover, sections Présentation / Architecture / Points techniques (optionnelles), Points clés, Galerie, `(Construit avec)` (tags), « Explorer ce projet » (optionnel, si un lien existe), Précédent / Suivant (circulaire), pied de page `ContactBar` (email copiable + flèche retour en haut). Composants dans `components/project/` ; `CopyEmail` en Inter (`small` sur les projets).
+  - `lib/content.ts` : type `Project` explicite (champs optionnels `architecture`, `technical`, `keyPoints`, `images`, `links.live/repo`) ; `images` = `{src,width,height,displayWidth?}` ; `image` = cover (aperçu au survol, et image en tête de page).
+  - Galerie : images au ratio d'origine (jamais rognées, `next/image` optimisé), 65 % de large sur desktop avec alternance gauche/droite, captures portrait consécutives regroupées sur une ligne pleine largeur (gauche/centre/droite), `displayWidth` pour réduire une capture floue.
+  - Images dans `public/images/projects/<slug>/` (`cover.webp`, `1.webp`…), converties depuis `../images-portfolio` (WebP, max 1920 px). Pour en ajouter : convertir avec `sharp`, puis renseigner largeur/hauteur dans `content.json`.
+  - **Vrais projets (contenu rédigé, ton pro, jargon technique sans détailler le code)** : `lecteur-streaming-umf` (Altervoice / Universal, 2026, seul, pas de lien), `umf-deepsearch` (Altervoice / Universal, 2026, en équipe, pas de lien, privé), `comi` (perso, 2026, en production sur VPS, ~10 utilisateurs, liens live + repo). Plus de projets factices.
+- **Phase 5 (transition de page, faite)** : `components/PageTransition.tsx` (dans `layout.tsx`) : deux rideaux (orange accent puis fond sombre) montent, la navigation a lieu dessous, ils sortent par le haut quand la nouvelle page est montée (filet de sécurité 5 s). Clic intercepté en capture, uniquement pour un changement de page (ancres : SmoothScroll), désactivé en reduced-motion. **Piège** : ne jamais poser la position initiale des rideaux en CSS (GSAP la convertit en px et la cumule avec `yPercent`) ; elle est posée par `gsap.set`. Le bouton retour du navigateur n'a pas de rideau. Le choix GSAP overlay (vs View Transitions) est validé.
+- Abandonnés après essais : cercles en grille, lampe à lave WebGL (formes jugées pas assez réalistes), champ de traits orientés ; `next-transition-router` (remplacé par le contrôleur maison).
 - `../portfolio-modele` (clone du portfolio inspirant) sert de référence de comportement **en lecture seule** : ne rien copier.
 
 ### Reste à faire
 - **Phase 1** : déploiement Vercel (push de `redesign` + connexion du repo, **à faire avec mon accord**).
-- **Phase 4** : vrais projets + captures (champ `image`), alternative mobile à l'aperçu au survol, `next/image` optimisé, pages `/projects/[slug]` finalisées. (Aperçu au survol déjà fait.)
-- **Phases 5 à 7** : transitions de page, finitions (loader, contact branché, SEO, a11y, perf), mise en ligne.
-- Vérifier le rendu mobile section par section et tout le comportement des animations dans un vrai navigateur (le navigateur intégré de Claude ne fait pas avancer les animations quand son panneau est masqué : `requestAnimationFrame` à l'arrêt, les captures expirent).
+- **Phase 4** : vérifier à fond le rendu mobile des pages projet et de la galerie ; alternative mobile à l'aperçu au survol (liste de projets, pas de survol sur tactile) ; ajuster si besoin les textes des 3 projets (liste des signaux audio « tempo, tonalité, énergie » de DeepSearch non vérifiée dans le code).
+- **Phase 5** : (optionnel) rideau au bouton retour du navigateur + restauration du scroll.
+- **Phase 6** : loader d'entrée (optionnel), contact branché (Route Handler + service d'envoi), SEO (metadata par projet, Open Graph, sitemap, favicon), accessibilité, performance (Lighthouse).
+- **Phase 7** : domaine + Vercel, tests appareils/navigateurs, retrait du worktree legacy, merge dans `main`.
+- Vérifier le rendu mobile section par section et les animations dans un vrai navigateur. Le navigateur intégré de Claude fige `requestAnimationFrame` quand son panneau est masqué : pour voir une animation, piloter un Chrome headless via CDP (`chrome.exe --headless=new --remote-debugging-port`, WebSocket Node) ou demander à l'utilisateur ; les images `next/image` lazy ne se chargent pas dans ce panneau.
 - Idée écartée pour l'instant : curseur personnalisé du modèle.
 
 ### Consignes de travail
@@ -164,7 +174,7 @@ public/                 cv.pdf, images/projects/<slug>/
 - Navigateur intégré : le `zoom` par région ne marche pas, utiliser `screenshot`. Après un changement de code, recharger la page complète avant de juger un rendu canvas (le rechargement à chaud peut laisser des artefacts).
 
 ### Prochaine étape
-**Phase 4** : remplacer les projets factices par les vrais (contenu legacy, captures), prévoir l'alternative mobile à l'aperçu au survol, finaliser les pages projet. Proposer d'abord le plan, coder après mon accord.
+Valider le rendu des pages projet (desktop + mobile), puis **Phase 6** (contact branché, SEO, accessibilité, perf) et le déploiement Vercel. Proposer d'abord le plan, coder après mon accord.
 
 ### Historique git (branche `redesign`)
-Commits : init + Phase 0, Phase 1 (tokens/polices), 3 réglages accent/grain, **Phase 2**, puis **Phase 3** (animations + footer + contact). Rien n'est poussé.
+Commits : init + Phase 0, Phase 1 (tokens/polices), 3 réglages accent/grain, **Phase 2**, **Phase 3** (animations + footer + contact), puis **Phase 4/5** (pages projet, vrais projets + images, transition de page). Rien n'est poussé.

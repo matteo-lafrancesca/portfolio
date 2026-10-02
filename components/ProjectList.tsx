@@ -86,7 +86,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
           <div ref={reel} className="h-full w-full">
             {projects.map((p) => (
               <div key={p.slug} className="relative h-full w-full">
-                <Image src={p.image} alt="" fill unoptimized sizes="420px" className="object-cover object-top" />
+                <Image src={p.image} alt="" fill loading="eager" sizes="420px" className="object-cover object-top" />
               </div>
             ))}
           </div>

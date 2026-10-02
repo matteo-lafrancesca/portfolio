@@ -7,17 +7,19 @@ export default function SectionTitle({
   accent,
   after,
   align = "center",
+  small = false,
 }: {
-  label: string;
+  label?: string;
   before?: string;
   accent: string;
   after?: string;
   align?: "center" | "left";
+  small?: boolean;
 }) {
   return (
     <div className={align === "center" ? "text-center" : ""}>
-      <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">({label})</p>
-      <SplitHeading className="font-display mt-4 text-5xl uppercase leading-none md:text-8xl">
+      {label && <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">({label})</p>}
+      <SplitHeading className={`font-display mt-4 uppercase leading-none ${small ? "text-4xl md:text-6xl" : "text-5xl md:text-8xl"}`}>
         {before} <span className="font-serif normal-case italic text-accent">{accent}</span> {after}
       </SplitHeading>
     </div>

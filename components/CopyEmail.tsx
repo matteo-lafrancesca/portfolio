@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // Un clic copie l'adresse dans le presse-papiers.
-export default function CopyEmail({ email }: { email: string }) {
+export default function CopyEmail({ email, small = false }: { email: string; small?: boolean }) {
   const [copied, setCopied] = useState(false);
 
   const copy = async () => {
@@ -21,7 +21,7 @@ export default function CopyEmail({ email }: { email: string }) {
       <button
         type="button"
         onClick={copy}
-        className="font-serif cursor-pointer bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-bottom bg-no-repeat text-3xl italic transition-[background-size,color] duration-500 hover:bg-[length:100%_1px] hover:text-accent md:text-6xl"
+        className={`font-sans cursor-pointer bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-bottom bg-no-repeat font-medium transition-[background-size,color] duration-500 hover:bg-[length:100%_1px] hover:text-accent ${small ? "text-2xl md:text-4xl" : "text-3xl md:text-6xl"}`}
       >
         {email}
       </button>
