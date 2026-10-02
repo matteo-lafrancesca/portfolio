@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/content";
 
@@ -11,7 +12,11 @@ export default function ProjectRow({ project, index }: { project: Project; index
       <span className="font-mono text-xs text-muted transition-colors duration-300 group-hover:text-accent">{String(index + 1).padStart(2, "0")}</span>
       <div className="flex flex-col gap-6">
         <h3 className="font-display max-w-4xl transition-transform duration-500 ease-out group-hover:translate-x-4 text-4xl uppercase leading-[0.95] tracking-[-0.03em] md:text-6xl">{project.title}</h3>
-        <ul className="flex flex-wrap gap-2">
+        {/* Pas de survol sur tactile : la cover reste visible dans la ligne (sur desktop, l'aperçu flottant la remplace). */}
+        <div className="relative hidden aspect-[16/10] w-full max-w-[220px] overflow-hidden rounded-2xl border border-line bg-fg/10 [@media(hover:none)]:block">
+          <Image src={project.image} alt="" fill sizes="220px" className="object-cover object-top" />
+        </div>
+        <ul className="flex flex-wrap gap-2 [@media(hover:none)]:hidden">
           {project.stack.map((tag) => (
             <li key={tag} className="rounded-full border border-line px-4 py-1.5 text-sm transition-colors duration-300 group-hover:border-accent/60">{tag}</li>
           ))}

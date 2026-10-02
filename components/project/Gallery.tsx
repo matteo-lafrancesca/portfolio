@@ -29,9 +29,9 @@ export default function Gallery({ title, images }: { title: string; images: Proj
           // Alternance gauche / droite sur grand écran, largeur réduite : les captures ne sont pas très nettes.
           const side = `md:w-[65%] ${k % 2 ? "md:ml-auto" : ""}`;
           return row.length > 1 ? (
-            <div key={row[0].src} className="flex items-start justify-between">
+            <div key={row[0].src} className="flex flex-wrap items-start gap-4 md:justify-between md:gap-0">
               {row.map((img) => (
-                <div key={img.src} className="w-[27%]">
+                <div key={img.src} className="w-[calc(50%-0.5rem)] md:w-[27%]">
                   <Figure image={img} alt={`${title}, capture ${n + 1}`} sizes="(min-width: 1152px) 310px, 27vw" caption={caption()} />
                 </div>
               ))}

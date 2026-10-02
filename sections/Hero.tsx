@@ -9,8 +9,8 @@ export default function Hero() {
     <ThemeSection theme="light" id="top" variant="hero" className="flex min-h-[calc(100svh+2.5rem)] flex-col items-center justify-center pb-[8.5rem] text-center md:min-h-[calc(100svh+3.5rem)] md:pb-[11.5rem]">
       <div data-curtain className="flex flex-col items-center">
       <div data-wave-group className="w-fit text-left">
-        <SplitHeading as="h1" type="chars" className="font-display whitespace-nowrap text-7xl uppercase leading-[0.85] md:text-[13rem]">{firstName}</SplitHeading>
-        <SplitHeading as="p" type="chars" waveFrom="start" className="font-serif whitespace-nowrap -mt-1 ml-[32%] text-6xl italic leading-none md:-mt-4 md:text-[10rem]">{lastName}</SplitHeading>
+        <SplitHeading as="h1" type="chars" className="font-display whitespace-nowrap text-[19vw] uppercase leading-[0.85] md:text-[13rem]">{firstName}</SplitHeading>
+        <SplitHeading as="p" type="chars" waveFrom="start" className="font-serif whitespace-nowrap -mt-1 ml-[32%] text-[13.5vw] italic leading-none md:-mt-4 md:text-[10rem]">{lastName}</SplitHeading>
       </div>
       <p data-intro="text" className="mt-10 max-w-xl whitespace-pre-line text-lg text-muted">{tagline}</p>
       <p data-intro="text" className="mt-8 font-mono text-xs uppercase tracking-widest text-accent">{role}</p>

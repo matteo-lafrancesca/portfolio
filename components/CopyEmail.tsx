@@ -21,7 +21,7 @@ export default function CopyEmail({ email, small = false }: { email: string; sma
       <button
         type="button"
         onClick={copy}
-        className={`font-sans cursor-pointer bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-bottom bg-no-repeat font-medium transition-[background-size,color] duration-500 hover:bg-[length:100%_1px] hover:text-accent ${small ? "text-2xl md:text-4xl" : "text-3xl md:text-6xl"}`}
+        className={`font-sans cursor-pointer bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-bottom bg-no-repeat font-medium transition-[background-size,color] duration-500 hover:bg-[length:100%_1px] hover:text-accent ${small ? "text-[5.4vw] sm:text-2xl md:text-4xl" : "text-[5.4vw] sm:text-3xl md:text-6xl"}`}
       >
         {email}
       </button>
