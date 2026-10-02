@@ -6,7 +6,8 @@
     "tagline": "Passionné par les nouvelles technologies et la\nprogrammation, je suis curieux et adaptable.",
     "availability": "Recherche un poste de développeur en CDI",
     "email": "matteo.lafrancesca@gmail.com",
-    "cv": "/cv.pdf"
+    "cv": "/cv.pdf",
+    "siteUrl": "https://matteo-lafrancesca.vercel.app"
   },
   "links": {
     "github": "https://github.com/matteo-lafrancesca",
