@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "./Button";
 
 // Étiquette flottante : le placeholder vide permet à `peer` de savoir si le champ est rempli.
@@ -9,10 +10,34 @@ const field =
 const label =
   "pointer-events-none absolute left-5 top-5 origin-left font-mono text-xs uppercase tracking-widest text-muted transition-all duration-300 peer-focus:top-2.5 peer-focus:text-[0.65rem] peer-focus:text-accent peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-[0.65rem]";
 
-// Non branché : l'envoi arrive en Phase 6.
+type Status = { state: "idle" | "sending" | "sent" | "error"; message?: string };
+
 export default function ContactForm() {
+  const [status, setStatus] = useState<Status>({ state: "idle" });
+
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus({ state: "sending" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error);
+      form.reset();
+      setStatus({ state: "sent", message: "Message envoyé, merci ! Je vous réponds vite." });
+    } catch (err) {
+      setStatus({ state: "error", message: err instanceof Error && err.message ? err.message : "L'envoi a échoué, réessayez ou écrivez-moi directement par email." });
+    }
+  };
+
   return (
-    <form onSubmit={(e) => e.preventDefault()} className="grid gap-4 md:grid-cols-2">
+    <form onSubmit={submit} className="grid gap-4 md:grid-cols-2">
+      {/* Champ piège anti-robots : hors écran, ignoré par les humains et les lecteurs d'écran. */}
+      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] h-0 w-0 opacity-0" />
       <div className={wrap}>
         <input id="name" name="name" required autoComplete="name" placeholder=" " className={field} />
         <label htmlFor="name" className={label}>Nom</label>
@@ -25,8 +50,9 @@ export default function ContactForm() {
         <textarea id="message" name="message" required rows={6} placeholder=" " className={`${field} resize-none`} />
         <label htmlFor="message" className={label}>Message</label>
       </div>
-      <div className="md:col-span-2">
-        <Button type="submit" hover="C'est parti">Envoyer</Button>
+      <div className="flex flex-wrap items-center gap-6 md:col-span-2">
+        <Button type="submit" disabled={status.state === "sending"} hover="C'est parti">{status.state === "sending" ? "Envoi…" : "Envoyer"}</Button>
+        <p role="status" className={`font-mono text-xs uppercase tracking-widest ${status.state === "error" ? "text-accent" : "text-muted"}`}>{status.message}</p>
       </div>
     </form>
   );

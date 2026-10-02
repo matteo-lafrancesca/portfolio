@@ -3,7 +3,7 @@ import Magnetic from "@/components/Magnetic";
 import RollText from "@/components/RollText";
 
 const base =
-  "group/roll inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-mono text-xs uppercase md:px-8 md:py-4 md:text-sm tracking-widest transition-colors duration-300";
+  "group/roll inline-flex cursor-pointer items-center gap-2 rounded-full px-7 py-3.5 font-mono text-xs uppercase md:px-8 md:py-4 md:text-sm tracking-widest transition-colors duration-300 disabled:cursor-wait";
 const variants = {
   primary: "bg-accent text-black hover:bg-fg hover:text-bg",
   ghost: "border border-line hover:border-fg hover:bg-fg hover:text-bg",
